@@ -1,5 +1,6 @@
 package com.pizzastore.service;
 
+import com.pizzastore.dto.PaymentItem;
 import com.pizzastore.dto.PaymentRequest;
 import com.stripe.Stripe;
 import com.stripe.model.checkout.Session;
@@ -18,7 +19,7 @@ public class PaymentService {
     public Session createCheckoutSession(PaymentRequest request) throws Exception {
         Stripe.apiKey = stripeApiKey;
         List<SessionCreateParams.LineItem> lineItems = new ArrayList<>();
-        for (PaymentRequest.PaymentItem item : request.getItems()) {
+        for (PaymentItem item : request.getItems()) {
             lineItems.add(
                     SessionCreateParams.LineItem.builder()
                             .setPriceData(

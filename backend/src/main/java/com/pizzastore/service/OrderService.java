@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.pizzastore.dto.OrderItemRequest;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class OrderService {
         Order order = new Order();
         order.setStatus(Order.Status.CREATED);
         double total = 0;
-        for (OrderRequest.OrderItemRequest item : request.getItems()) {
+        for (OrderItemRequest item : request.getItems()) {
             Pizza pizza = pizzaRepository.findById(item.getPizzaId())
                     .orElseThrow(() -> new RuntimeException("Pizza not found"));
             OrderItem orderItem = new OrderItem();

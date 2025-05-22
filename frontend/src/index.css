@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Базовые стили */
+body {
+  @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Кастомные компоненты */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300;
+}
+
+.btn-secondary {
+  @apply bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4;
+}
+
+.spinner {
+  @apply animate-spin h-5 w-5 text-blue-600;
+}

@@ -14,6 +14,10 @@ public class PaymentController {
 
     @PostMapping("/create-checkout-session")
     public ResponseEntity<?> createCheckoutSession(@RequestBody PaymentRequest request) {
-        return ResponseEntity.ok(paymentService.createCheckoutSession(request));
+        try {
+            return ResponseEntity.ok(paymentService.createCheckoutSession(request));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error creating checkout session: " + e.getMessage());
+        }
     }
 }

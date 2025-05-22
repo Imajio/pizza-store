@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: pizzastore
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - pizzastore-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/pizzastore
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin123
+      - STRIPE_API_KEY=sk_test_your_stripe_key
+      - JWT_SECRET=your_jwt_secret
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - pizzastore-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_STRIPE_PUBLIC_KEY=pk_test_your_stripe_key
+      - REACT_APP_API_URL=http://backend:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - pizzastore-network
+
+volumes:
+  db_data:
+
+networks:
+  pizzastore-network:
+    driver: bridge
