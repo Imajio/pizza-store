@@ -18,35 +18,35 @@ Pizza Store MVP is a web application for ordering pizzas, built with a **React**
 
 ## Project Structure
 
-pizza-store/
-├── frontend/               # React frontend
+pizza-store/                                                              
+├── frontend/               # React frontend                              
 │   ├── src/
 │   │   ├── components/    # React components (PizzaCard, Menu, Cart, etc.)
-│   │   ├── index.tsx      # Entry point
-│   │   ├── App.tsx        # Main app component
-│   │   ├── index.css      # Tailwind CSS
-│   │   ├── i18n.ts        # i18next configuration
-│   ├── public/
-│   │   ├── output.css     # Compiled Tailwind CSS
-│   │   ├── images/        # Static images (logo.png, hero-bg.jpg, etc.)
-│   │   ├── locales/       # Translation files (en, pl, de)
-│   ├── index.html         # HTML entry point
-│   ├── vite.config.ts     # Vite configuration
-│   ├── tailwind.config.js # Tailwind configuration
-│   ├── tsconfig.json      # TypeScript configuration
-│   ├── package.json
-├── backend/               # Spring Boot backend
-│   ├── src/main/java/     # Java source code
-│   │   ├── com/pizzastore/
-│   │   │   ├── config/    # Security and CORS config
-│   │   │   ├── controller/# API controllers
-│   │   │   ├── model/     # Entity models
-│   │   │   ├── repository/# JPA repositories
-│   │   │   ├── service/   # Business logic
-│   ├── src/main/resources/
-│   │   ├── application.properties # Spring Boot configuration
-│   ├── pom.xml            # Maven configuration
-├── README.md
+│   │   ├── index.tsx      # Entry point                                  
+│   │   ├── App.tsx        # Main app component                           
+│   │   ├── index.css      # Tailwind CSS                                 
+│   │   ├── i18n.ts        # i18next configuration                        
+│   ├── public/                                                           
+│   │   ├── output.css     # Compiled Tailwind CSS                        
+│   │   ├── images/        # Static images (logo.png, hero-bg.jpg, etc.)  
+│   │   ├── locales/       # Translation files (en, pl, de)               
+│   ├── index.html         # HTML entry point                             
+│   ├── vite.config.ts     # Vite configuration                          
+│   ├── tailwind.config.js # Tailwind configuration                        
+│   ├── tsconfig.json      # TypeScript configuration                     
+│   ├── package.json                                                      
+├── backend/               # Spring Boot backend                          
+│   ├── src/main/java/     # Java source code                             
+│   │   ├── com/pizzastore/                                                
+│   │   │   ├── config/    # Security and CORS config                      
+│   │   │   ├── controller/# API controllers                               
+│   │   │   ├── model/     # Entity models                                
+│   │   │   ├── repository/# JPA repositories                              
+│   │   │   ├── service/   # Business logic                                
+│   ├── src/main/resources/                                              
+│   │   ├── application.properties # Spring Boot configuration           
+│   ├── pom.xml            # Maven configuration                         
+├── README.md                                                          
 
 ## Installation
 
