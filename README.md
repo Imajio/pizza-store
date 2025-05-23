@@ -21,8 +21,8 @@ Pizza Store MVP is a web application for ordering pizzas, built with a **React**
 pizza-store/                                                              
 ├── frontend/               # React frontend                              
 │   ├── src/
-│   │   ├── components/    # React components (PizzaCard, Menu, Cart, etc.)
-│   │   ├── index.tsx      # Entry point                                  
+│   │   ├── components/    # React components (PizzaCard, Menu, Cart, etc.)      
+│   │   ├── index.tsx      # Entry point                                                  
 │   │   ├── App.tsx        # Main app component                           
 │   │   ├── index.css      # Tailwind CSS                                 
 │   │   ├── i18n.ts        # i18next configuration                        
